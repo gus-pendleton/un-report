@@ -1,0 +1,35 @@
+---
+title: "title"
+output: html_document
+date: '2023-01-18'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-in package} 
+library(tidyverse)
+
+```
+I can wrirte whatver I want here, it won't matter
+
+```{r}
+gapminder_1997 <- read_csv("gapminder_1997.csv")
+
+```
+
+```{r}
+ggplot(gapminder_1997) +
+  aes(x = gdpPercap, y=lifeExp, color = continent)+
+  labs(x = "gdp per cap", y="life expec") +
+  geom_point() +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+
+
+
+
+
